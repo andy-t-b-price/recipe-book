@@ -38,6 +38,6 @@ constructor(private shoppingListService: ShoppingListService) {
   }  
 
   addIngredientsToShoppingList(ingredients: Ingredient[]) {
-    //this.shoppingListService;
+    this.shoppingListService.addIngredients(ingredients);
   }
 }
