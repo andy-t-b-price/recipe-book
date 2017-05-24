@@ -11,7 +11,7 @@ recipeSelected = new EventEmitter<Recipe>();
         new Recipe(
             'A Burger',
             'This is simply a test',
-            'https://upload.wikimedia.org/wikipedia/commons/1/15/Recipe_logo.jpeg',
+            'http://www.bk.com/sites/default/files/VeggieBurger_thumb.png',
             [
                 new Ingredient('Beef', 1),
                 new Ingredient('Bread Bun', 2),
@@ -20,7 +20,7 @@ recipeSelected = new EventEmitter<Recipe>();
         new Recipe(
             'A Sandwich',
             'This is simply a test',
-            'https://upload.wikimedia.org/wikipedia/commons/1/15/Recipe_logo.jpeg',
+            'http://thesandwichguide.com/wp-content/uploads/sandwich.jpg',
             [
                 new Ingredient('Ham', 4),
                 new Ingredient('Mustard', 2),
@@ -36,6 +36,11 @@ constructor(private shoppingListService: ShoppingListService) {
   getRecipes() {
       return this.recipes.slice();
   }  
+
+
+  getRecipe(index: number) {
+      return this.recipes[index];
+  }
 
   addIngredientsToShoppingList(ingredients: Ingredient[]) {
     this.shoppingListService.addIngredients(ingredients);
